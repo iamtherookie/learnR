@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Welcome</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <h1>Learn R</h1>
+    <h3>Basics</h3>
+    <ul>
+      <li>File type: .rmd</li>
+      <li>
+        Uses the following syntax:
+        <p><code>This is regular markdown text that will render as regular text.</code></p>
+        <p><code>``{r} 7 + 7 #This is R code ```</code>
+        </p>
+      </li>
+
+      <li>Use “#” for making a comment</li>
+    </ul>
+
+    <h3>Data Types</h3>
+    <ul>
+      <li>
+        Numeric: Any number with or without a decimal point: 23, 0.23, and the
+        numeric null value NA
+      </li>
+
+      <li>
+        Character: Any grouping of characters on your keyboard (letters,
+        numbers, spaces, symbols, etc) or text. Most strings are surrounded by
+        single quotes ‘ … ‘. Also can be referred to as a “string.”
+      </li>
+
+      <li>
+        Logical: Only has two possible values - either TRUE or FALSE (without
+        quotes).
+      </li>
+
+      <li>Vectors: a list of related data types that is all the same type</li>
+
+      <li>
+        NA: represents the absence of a value and is represented by the keyword
+        NA (without quotes)
+      </li>
+    </ul>
+
+    <h3>Variables</h3>
+    <ul>
+      <li>Variables allows us to store information and associate that information with a name</li>
+      <li>Assign variables with an arrow sign (a carat and a dash) <-
+        <p><code>Ex: full_name <- “First Last”</code></li></p>
+    </ul>
+
+    <h3>Vectors</h3>
+    <ul>
+      <li>List like structure</li>
+      <ul><li>Ex: spring_months <- c(“March”, “April”, “May”, “June”) </li></ul>
+      <li>Created by separating four character strings with a comma and wrapped inside c() (which is a combine function)
+      </li>
+      <li>A few things you should know how to do with vectors:
+      </li>
+      <ul><li>You can check the type of element in a vector by using typeof(vector_name)
+      </li>
+      <li>Check the length of a vector by using length(vector_name)
+      </li>
+      <li>Access individual elements in the vector by using [] and placing the element position inside the brackets. Start counting elements at one NOT zero
+      </li>
+      </ul>
+
+    </ul>
+
+    <h3>Conditionals</h3>
+    <ul>
+      <li>Run a task based on certain conditions</li>
+      <li>If/Else statements are helpful:</li>
+      <pre><code>Ex: if (TRUE) {
+      print(“Go to sleep!”)
+      } else {
+      print(“Wake up!”)
+      }</code></pre>
+    </ul>
+
+    <h3>Logical Operators</h3>
+    <ul>
+      <li>Three logical operators:</li>
+      <ul><li>The and operator <span>(&)</span></li>
+      <li>The or operator <span>(|)</span></li>
+      <li>The not operator <span>(!)</span></li>
+      <li>The not operator reverses the value of a TRUE value and vice versa</li>
+      </ul>
+    </ul>
+
+    <h3>Functions</h3>
+    <ul>
+      <li>We can call or use a function by stating the name of the function and following it with an opening and closing parentheses ie <span>functionName()</span></li>
+      <li>Between the parenthesis, we usually pass an argument or a value that the function uses to conduct an action ie <span>functionName(value)</span></li>
+    </ul>
+
+    <h3>Importing Packages</h3>
+    <ul>
+      <li>Need to run the command the first time you install a package:
+          <span>install.packages(‘package-name’)</span></li>
+      <li>To import a package:
+          <span>library(package-name)</span></li>
+    </ul>
+
+  </body>
+</html>
