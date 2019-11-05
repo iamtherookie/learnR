@@ -8,20 +8,40 @@
 
   <body>
     <h1>Learn R</h1>
-    <h3>Basics</h3>
+    <!-- table of contents -->
+    <div id="toc-container">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#basics">Basics</a></li>
+        <li><a href="#data-types">Data Types</a></li>
+        <li><a href="#variables">Variables</a></li>
+        <li><a href="#vectors">Vectors</a></li>
+        <li><a href="#conditionals">Conditionals</a></li>
+        <li><a href="#logical-operators">Logical Operators</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#importing-packages">Importing Packages</a></li>
+      </ul>
+    </div>
+
+
+    <!-- notes section -->
+
+    <h3 id="basics">Basics</h3>
     <ul>
       <li>File type: .rmd</li>
       <li>
         Uses the following syntax:
         <p><code>This is regular markdown text that will render as regular text.</code></p>
-        <p><code>``{r} 7 + 7 #This is R code ```</code>
-        </p>
+        <pre><code>
+          ````{r}
+          7 + 7 #This is R code
+          ```</code></pre>
       </li>
 
       <li>Use “#” for making a comment</li>
     </ul>
 
-    <h3>Data Types</h3>
+    <h3 id="data-types">Data Types</h3>
     <ul>
       <li>
         Numeric: Any number with or without a decimal point: 23, 0.23, and the
@@ -47,17 +67,17 @@
       </li>
     </ul>
 
-    <h3>Variables</h3>
+    <h3 id="variables">Variables</h3>
     <ul>
       <li>Variables allows us to store information and associate that information with a name</li>
       <li>Assign variables with an arrow sign (a carat and a dash) <-
         <p><code>Ex: full_name <- “First Last”</code></li></p>
     </ul>
 
-    <h3>Vectors</h3>
+    <h3 id="vectors">Vectors</h3>
     <ul>
       <li>List like structure</li>
-      <ul><li>Ex: spring_months <- c(“March”, “April”, “May”, “June”) </li></ul>
+      <ul><li><code>Ex: spring_months <- c(“March”, “April”, “May”, “June”) </code></li></ul>
       <li>Created by separating four character strings with a comma and wrapped inside c() (which is a combine function)
       </li>
       <li>A few things you should know how to do with vectors:
@@ -72,7 +92,7 @@
 
     </ul>
 
-    <h3>Conditionals</h3>
+    <h3 id="conditionals">Conditionals</h3>
     <ul>
       <li>Run a task based on certain conditions</li>
       <li>If/Else statements are helpful:</li>
@@ -83,7 +103,7 @@
       }</code></pre>
     </ul>
 
-    <h3>Logical Operators</h3>
+    <h3 id="logical-operators">Logical Operators</h3>
     <ul>
       <li>Three logical operators:</li>
       <ul><li>The and operator <span>(&)</span></li>
@@ -93,13 +113,13 @@
       </ul>
     </ul>
 
-    <h3>Functions</h3>
+    <h3 id="functions">Functions</h3>
     <ul>
       <li>We can call or use a function by stating the name of the function and following it with an opening and closing parentheses ie <span>functionName()</span></li>
       <li>Between the parenthesis, we usually pass an argument or a value that the function uses to conduct an action ie <span>functionName(value)</span></li>
     </ul>
 
-    <h3>Importing Packages</h3>
+    <h3 id="importing-packages">Importing Packages</h3>
     <ul>
       <li>Need to run the command the first time you install a package:
           <span>install.packages(‘package-name’)</span></li>

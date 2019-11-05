@@ -15,6 +15,19 @@ h1 {
   font-size: 2rem;
   text-align: center;
 }
+
+/* table of contents css */
+#toc-container li a:hover {
+  background-color: red;
+  padding: .2%;
+}
+
+#toc-container li {
+  padding: .3%;
+}
+
+/* notes css */
+
 h3 {
   font-size: 1.5rem;
 }
@@ -22,7 +35,7 @@ li {
   font-size: 0.9rem;
 }
 
-code {
+code, pre {
   background-color: aliceblue;
   color: black;
   padding: 0.2rem;
