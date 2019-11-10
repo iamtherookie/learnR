@@ -12,21 +12,15 @@
     <div id="toc-container">
       <p class="toc-title">Contents</p>
       <ul class="toc-list">
-        <li><a href="#basics">Basics</a></li>
-        <li><a href="#data-types">Data Types</a></li>
-        <li><a href="#variables">Variables</a></li>
-        <li><a href="#vectors">Vectors</a></li>
-        <li><a href="#conditionals">Conditionals</a></li>
-        <li><a href="#logical-operators">Logical Operators</a></li>
-        <li><a href="#functions">Functions</a></li>
-        <li><a href="#importing-packages">Importing Packages</a></li>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#data-frames">Data Frames</a></li>
       </ul>
     </div>
 
 
-    <!-- notes section -->
-
-    <h3 id="basics">Basics</h3>
+    <!-- Introduction section -->
+    <h2 id="intro">Introduction</h2>
+    <h3>Basics</h3>
     <ul>
       <li>File type: .rmd</li>
       <li>
@@ -41,7 +35,14 @@
       <li>Use “#” for making a comment</li>
     </ul>
 
-    <h3 id="data-types">Data Types</h3>
+    <h3>Libraries</h3>
+    <ul>
+      <li>dplyr</li>
+      <li>readr</li>
+      <li>tidyverse</li>
+    </ul>
+
+    <h3>Data Types</h3>
     <ul>
       <li>
         Numeric: Any number with or without a decimal point: 23, 0.23, and the
@@ -67,14 +68,14 @@
       </li>
     </ul>
 
-    <h3 id="variables">Variables</h3>
+    <h3>Variables</h3>
     <ul>
       <li>Variables allows us to store information and associate that information with a name</li>
       <li>Assign variables with an arrow sign (a carat and a dash) <-
         <p><code>Ex: full_name <- “First Last”</code></li></p>
     </ul>
 
-    <h3 id="vectors">Vectors</h3>
+    <h3>Vectors</h3>
     <ul>
       <li>List like structure</li>
       <ul><li><code>Ex: spring_months <- c(“March”, “April”, “May”, “June”) </code></li></ul>
@@ -92,7 +93,7 @@
 
     </ul>
 
-    <h3 id="conditionals">Conditionals</h3>
+    <h3>Conditionals</h3>
     <ul>
       <li>Run a task based on certain conditions</li>
       <li>If/Else statements are helpful:</li>
@@ -103,7 +104,7 @@
       }</code></pre>
     </ul>
 
-    <h3 id="logical-operators">Logical Operators</h3>
+    <h3>Logical Operators</h3>
     <ul>
       <li>Three logical operators:</li>
       <ul><li>The and operator <span>(&)</span></li>
@@ -113,13 +114,13 @@
       </ul>
     </ul>
 
-    <h3 id="functions">Functions</h3>
+    <h3>Functions</h3>
     <ul>
       <li>We can call or use a function by stating the name of the function and following it with an opening and closing parentheses ie <span>functionName()</span></li>
       <li>Between the parenthesis, we usually pass an argument or a value that the function uses to conduct an action ie <span>functionName(value)</span></li>
     </ul>
 
-    <h3 id="importing-packages">Importing Packages</h3>
+    <h3>Importing Packages</h3>
     <ul>
       <li>Need to run the command the first time you install a package:
           <span>install.packages(‘package-name’)</span></li>
@@ -127,5 +128,101 @@
           <span>library(package-name)</span></li>
     </ul>
 
+    <!-- data frames notes -->
+    <h2 id="data-frames">Data Frames</h2>
+
+    <h3>CSVs</h3>
+    <ul>
+      <li>one of the most common formats for big datasets</li>
+      <li>the first row of a CSV contains column headings. All subsequent rows contain values.</li>
+      <li>each column heading and each variable is separated by a comma</li>
+      <li>loading and saving</li>
+      <ul>
+        <li><code>df <- read_csv('file.csv')</code></li>
+        <li>df = the data frame, creates a data name</li>
+      </ul>
+    </ul>
+
+    <h3>Data Frame</h3>
+    <ul>
+      <li>A data frame is a R object that stores tabular data in a table structur
+      made up of rows and columns</li>
+      <li>if the data frame is small, you can display it by typing its name</li>
+      <li>the <code>head()</code> function returns the first 6 rows of a data frame</li>
+        <ul><li>You can pass additional argument n to head() ie <code>head(df, 8)</code> to show first 8 rows</li></ul>
+      <li>The function <code>summary()</code> will return summary statistics such as
+      mean, median, minimum, maximum for each numeric column while providing class and length
+      non-numeric columns</li>
+    </ul>
+
+    <h3>Piping</h3>
+    <ul>
+      <li>the pipe operator <code>%>%</code> helps increase the readability of data
+      frame code by piping the value on its left into the first argument of the function
+      that follows it. For example:</li>
+      <ul>
+        <li><code>df %>%</code></li>
+        <li><code>head()</code></li>
+        <li>Pipes the data frame into the first argument of head() becoming:</li>
+        <li><code>head(df)</code></li>
+      </ul>
+    </ul>
+
+    <h3>Selecting and Excluding Columns</h3>
+    <ul>
+      <li>you can select appropriate columns for analysis with the <code>select()</code></li>
+      <ul>
+        <li>Ex: <code>select(customers, age, gender)</code></li>
+        <li>select() function makes a data frames as its first argument</li>
+        <li>all additional arguments are the desired columns to select</li>
+      </ul>
+      <li>you can simplify the readability of your code using the pipe:</li>
+      <ul><code>customers %>%
+        select(age, gender)
+      </code>
+      <li>this can be read as: from the customers table,
+
+
+      </li>
+      </ul>
+    </ul>
+
+    <h3>Filtering Rows with Logic</h3>
+    <ul>
+      <li>Subset a data frame by rows using <i>dplyr</i>'s <span>filter()</span></li>
+      <ul>
+        <li>Ex: filter data by orders with customer's first name Joyce</li>
+        <code>orders %>%
+        filter(first_name == 'Joyce')</code>
+      </ul>
+      <li>For multiple arguments, use a comma in between each condition</li>
+      <li>To use the OR <span>|</span> operator:</li>
+      <ul>
+        <li><code>orders %>%
+        filter(shoe_type == 'clogs' | price < 20)</code></li>
+      </ul>
+      <li>To use the not or bang <span>!</span> operator:</li>
+      <ul>
+        <li>Ex: find all the orders with shoe color NOT red</li>
+        <li><code>orders %>%
+        filter(!(shoe_color == red))</code></li>
+      </ul>
+      <li>Sort rows of a data frame in ascending order by the column provided as an argument</li>
+      <ul>
+        <li>use the <span>arrange()</span> using dplyr</li>
+        <li>numeric columns: sorts lower to higher numbers</li>
+        <li>character: sorts by alphabetical order from A to Z</li>
+        <li><code>customers %>%
+        arrange(name)</code></li>
+      </ul>
+      <li>sort rows by descending order</li>
+      <ul>
+        <li><code>customers %>%
+        arrange(desc(age))</code></li>
+      </ul>
+      <li>If multiple arguments are provided to arrange() it will order the rows by
+      the column given as the first argument and use the additional columns to
+      break ties in the values of the preceding columns</li>
+    </ul>
   </body>
 </html>

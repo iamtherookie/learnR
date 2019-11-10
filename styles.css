@@ -28,9 +28,17 @@ h1 {
 
 /* notes css */
 
-h3 {
+h2 {
   font-size: 1.5rem;
+  background-color: red;
+  margin-top: 1.5rem;
 }
+
+h3 {
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
 li {
   font-size: 0.9rem;
 }
@@ -40,7 +48,8 @@ code, pre {
   color: black;
   padding: 0.2rem;
   display: inline-block;
-  white-space: pre-wrap;
+  white-space: pre-line;
+  margin: .3rem;
 }
 
 span {
